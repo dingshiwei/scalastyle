@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
                         "junit" % "junit" % "4.11" % "test",
                         "com.novocode" % "junit-interface" % "0.10" % "test",
                         "com.google.guava" % "guava" % "17.0" % "test",
+                        "edu.berkeley.cs" % "chisel3_2.13" % "3.5.0",
                         "org.scalatest" %% "scalatest" % "3.0.3" % "test")
 
 fork in (Test, run) := true

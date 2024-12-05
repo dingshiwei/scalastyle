@@ -185,4 +185,17 @@
    <parameter name="words"><![CDATA[TODO|FIXME]]></parameter>
   </parameters>
  </check>
+ <check level="error" class="org.scalastyle.scalariform.NamingChecker" enabled="true">
+  <parameters>
+   <parameter name="regex">^[A-Z][a-zA-Z0-9]*$</parameter>
+  </parameters>
+ </check>
+ <check level="warning" class="org.scalastyle.scalariform.PortDefinitionChecker" enabled="true"/>
+ <check level="error" class="org.scalastyle.scalariform.SignalWidthChecker" enabled="true"/>
+ <check level="error" class="org.scalastyle.scalariform.SignalInitializationChecker" enabled="true"/>
+ <check level="error" class="org.scalastyle.scalariform.ClockDomainCrossingChecker" enabled="true"/>
+ <check level="warning" class="org.scalastyle.scalariform.NestedBlockDepthChecker" enabled="true"/>
+ <check level="warning" class="org.scalastyle.scalariform.WhenStatementsChecker" enabled="true"/>
 </scalastyle>
+
+
