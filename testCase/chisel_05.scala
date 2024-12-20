@@ -1,4 +1,4 @@
-import chisel3._
+package AbstractCs
 
 class MyModule extends Module {
   // 数据接口定义

@@ -125,6 +125,7 @@ class CheckerUtils(classLoader: Option[ClassLoader] = None) {
         case c: FileChecker => c.verify(file, c.level, lines, lines)
         case c: ScalariformChecker => c.verify(file, c.level, scalariformAst.ast, lines)
         case c: CombinedChecker => c.verify(file, c.level, CombinedAst(scalariformAst.ast, lines), lines)
+        case c: FilePathChecker => c.verifyFile(file, c.level, scalariformAst.ast, lines)
         case _ => Nil
       }).filter(m => CommentFilter.filterApplies(m, commentFilters))
     }
@@ -237,13 +238,23 @@ trait Checker[A] {
   def verify[T <: FileSpec](file: T, level: Level, ast: A, lines: Lines): List[Message[T]] = {
     verify(ast).map(p => toStyleError(file, p, level, lines))
   }
+  def verifyFile[T <: FileSpec](file: T, level: Level, ast: A, lines: Lines): List[Message[T]] = {
+    verify(ast, file).map(p => toStyleError(file, p, level, lines))
+  }
 
   def verify(ast: A): List[ScalastyleError]
+
+  def verify[T <: FileSpec](ast: A, file: T): List[ScalastyleError] = {
+    return Nil
+  }
 }
+
 
 trait FileChecker extends Checker[Lines]
 
 trait ScalariformChecker extends Checker[CompilationUnit]
+
+trait FilePathChecker extends Checker[CompilationUnit]
 
 case class CombinedAst(compilationUnit: CompilationUnit, lines: Lines)
 

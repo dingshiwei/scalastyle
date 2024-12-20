@@ -190,12 +190,14 @@
    <parameter name="regex">^[A-Z][a-zA-Z0-9]*$</parameter>
   </parameters>
  </check>
- <check level="warning" class="org.scalastyle.scalariform.PortDefinitionChecker" enabled="true"/>
- <check level="error" class="org.scalastyle.scalariform.SignalWidthChecker" enabled="true"/>
- <check level="error" class="org.scalastyle.scalariform.SignalInitializationChecker" enabled="true"/>
- <check level="error" class="org.scalastyle.scalariform.ClockDomainCrossingChecker" enabled="true"/>
- <check level="warning" class="org.scalastyle.scalariform.NestedBlockDepthChecker" enabled="true"/>
- <check level="warning" class="org.scalastyle.scalariform.WhenStatementsChecker" enabled="true"/>
+<!-- <check level="warning" class="org.scalastyle.scalariform.PortDefinitionChecker" enabled="true"/>-->
+<!-- <check level="error" class="org.scalastyle.scalariform.SignalWidthChecker" enabled="true"/>-->
+<!-- <check level="error" class="org.scalastyle.scalariform.SignalInitializationChecker" enabled="true"/>-->
+<!-- <check level="error" class="org.scalastyle.scalariform.ClockDomainCrossingChecker" enabled="true"/>-->
+<!-- <check level="warning" class="org.scalastyle.scalariform.NestedBlockDepthChecker" enabled="true"/>-->
+<!-- <check level="warning" class="org.scalastyle.scalariform.WhenStatementsChecker" enabled="true"/>-->
+ <check level="warning" class="org.scalastyle.scalariform.PackageDefineChecker" enabled="true"/>
+ <check level="warning" class="org.scalastyle.scalariform.PackagePathChecker" enabled="true"/>
 </scalastyle>
 
 
